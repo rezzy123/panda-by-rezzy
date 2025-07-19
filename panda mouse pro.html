@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panda Mouse Pro 8.1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #facc15;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    header .logo {
+      font-size: 32px;
+    }
+
+    nav {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      justify-content: center;
+    }
+
+    nav button {
+      padding: 10px 16px;
+      background-color: #facc15;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .red-warning {
+      color: red;
+      font-size: 18px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .feature-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    h2, h3 {
+      margin-top: 20px;
+      color: #000;
+    }
+
+    .plus {
+      font-size: 48px;
+      text-align: center;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .emoji-center {
+      font-size: 60px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .copy-box {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px dashed #aaa;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f0f0f0;
+      border-radius: 6px;
+      justify-content: space-between;
+    }
+
+    .copy-box p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .copy-box button {
+      padding: 6px 12px;
+      background-color: #facc15;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🐼</div>
+    <h1>Panda Mouse Pro 8.1</h1>
+  </header>
+
+  <div class="emoji-center">🐼</div>
+
+  <nav>
+    <button><span class="red-warning">⚠️</span> Aktivasi</button>
+    <button><span class="red-warning">⚠️</span> Device Connect</button>
+    <button>Tambah Kursor</button>
+    <button>Mapping</button>
+    <button>Bantuan</button>
+  </nav>
+
+  <div class="container">
+    <h2>Selamat datang di Panda Mouse Pro 8.1</h2>
+    <p>Gunakan tombol di atas untuk mengelola koneksi, kursor, dan aktivasi perangkat kamu.</p>
+
+    <div class="feature-box" id="statusBox">
+      <p>🔗 <span id="statusText">Belum ada device yang terhubung.</span><br><br>
+      Tekan <strong>Device Connect</strong> untuk menyambungkan.</p>
+    </div>
+
+    <div class="plus">+</div>
+
+    <h3>Metode Aktivasi</h3>
+    <ul>
+      <li>Aktivasi untuk Android 11+</li>
+      <li>Aktivasi dengan Shizuku</li>
+      <li>Aktivasi menggunakan PC</li>
+    </ul>
+
+    <h3>Pilih Kursor (Salin)</h3>
+
+    <div class="copy-box">
+      <p id="cursor1">Mouse</p>
+      <button onclick="copyCursor('cursor1')">Salin</button>
+    </div>
+
+    <div class="copy-box">
+      <p id="cursor2">Gamepad</p>
+      <button onclick="copyCursor('cursor2')">Salin</button>
+    </div>
+
+    <div class="copy-box">
+      <p id="cursor3">Touchpad</p>
+      <button onclick="copyCursor('cursor3')">Salin</button>
+    </div>
+
+    <h3>Hubungkan Device</h3>
+    <ul>
+      <li>Keyboard & Mouse</li>
+      <li>Gamepad</li>
+    </ul>
+
+    <h3>Tambah Game</h3>
+    <ul>
+      <li>Tambah Game Secara Manual</li>
+      <li>Scan Otomatis</li>
+    </ul>
+  </div>
+
+  <script>
+    function copyCursor(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Disalin: " + text);
+      });
+    }
+  </script>
+
+</body>
+</html>
